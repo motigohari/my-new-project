@@ -1,0 +1,436 @@
+#!/bin/bash
+clear
+echo "hello my frind dis is script informion"
+read -p  "whet is your name ? " name
+echo "hello $name"
+
+while true; do
+    	cat << EOF
+        Please Select:
+        1. Info
+        2. Linux
+        3. Bash
+        4. C 
+        5. C++
+        6. Python
+        7. Javescript
+        8. Qt
+        0. Quit
+EOF
+read -p "Enter selection [0-7] > "
+    case "$REPLY" in
+       
+        0)
+            break
+            ;;
+        1)
+    	 echo "informion"
+       # continue
+       #puts " "
+		read
+		;;
+        2) clear
+while true; do
+        cat << EOF1						# פקודות של מערכת LINUX
+        Please Select:
+        1.  text editors
+        2.  Wget
+        3.  sleep
+        4.  wc
+        5.  bc
+        6.  date
+        7.  ls
+        8.  "cat"
+        9.  cp
+        10. mv
+        11. rm
+        12. mkdir
+        13. head/tail
+        14. grep
+        15. sort
+        16. extra
+        0. Quit
+EOF1
+read -p "Enter selection [0-7] > "
+	case "$REPLY" in
+		0)clear
+        break
+        ;;
+		1)clear
+		echo "Text editor type:"
+		echo "gedit			(http://www.gedit.org/)"
+		echo "eclipse"
+		echo "geany"
+		echo "nano(my fyvorit)"
+		echo "vi , vim"
+		echo ""
+		echo ""
+		echo ""
+		#continue 
+		read
+		;;
+		2)clear
+		echo "Wget:"
+		echo "wget -c http://microsoft.com/customers/dogs/winxp4dogs.zip"
+		echo "Continues an interrupted download"
+		echo " "
+		echo "wget -m http://www.google.com"
+		echo "mirrors a site (  םיעלקה ירוחאמ )"
+		echo " "
+		echo "wget –r –np http://www.xml.com/ldd/chapter/book/"
+		echo "Recursively downloads an online book for offline access. ( Download files from website  )"
+		echo " " 
+		echo "-np: "noparent". Only follows links in the current directory."
+		echo ""
+		echo ""
+		echo ""
+		echo ""
+       # continue     
+		read
+		;;
+		3)clear
+		echo "Sleep:"
+		echo "sleep 60"
+		echo "Waits for 60 seconds (doesn't consume system resources)."
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		4)clear
+		echo "Wc"
+		echo "wc report.txt (word count)"
+		echo "info.txt"
+		echo "Counts the number of lines, words and characters in a file or in standard input"
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		5)clear
+		echo "Bc"
+		echo "bc - basic calculator(ןובשחמ)"
+		
+		echo ""
+		echo ""
+		echo ""#continue
+		read
+		;;
+		6)clear
+		echo "Date"
+		echo "date"
+		echo "Returns the current date. Useful in scripts to record when commands started or completed."
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		7)clear
+		echo "Ls:" 
+		echo "	Lists the files in the current directory, in alphanumeric order,
+				except files starting with the “.” character.
+				
+				ls -a (all) Lists all the files (including .* files)
+				ls -l (long) Long listing (type, date, size, owner, permissions)
+				ls -t (time) Lists the most recent files first
+				ls -s (size) Lists the biggest files first
+				ls -r (reverse) Reverses the sort order
+				ls -ltr (options can be combined) Long listing, most recent files at the end
+				
+				Note: files starting with the “.” character are hidden files in Linux "
+		
+		echo 	"Examples: "
+		echo 	"ls *txt
+				The shell first replaces *txt by all the file and directory names ending by
+				txt (including .txt), except those starting with “.” , and then executes the ls command line.
+				
+				ls d.*
+				Lists all the files and directories starting with . d
+				
+				ls -d
+				tells ls not to display the contents of directories."
+		
+		echo	"ls -l scriptinfo1.sh
+				-rwxr--r-- 1 moti moti 2418 יונ  3 00:13 scriftinfo.sh"		
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		8)clear
+		echo	"Cat:
+				- concatenate files and print on the standard output		
+					cat [OPTION]... [FILE]..
+								DESCRIPTION
+				   Concatenate FILE(s) to standard output.
+
+				   With no FILE, or when FILE is -, read standard input.
+
+				   -A, --show-all
+						  equivalent to -vET
+
+				   -b, --number-nonblank
+						  number nonempty output lines, overrides -n
+
+				   -e     equivalent to -vE
+
+				   -E, --show-ends
+						  display $ at end of each line
+
+				   -n, --number
+						  number all output lines
+
+				   -s, --squeeze-blank
+						  suppress repeated empty output lines
+
+				   -t     equivalent to -vT"
+		
+		echo	"Examples:
+				cat f - g
+				Output f's contents, then standard input, then g's contents.
+
+				cat    Copy standard input to standard output."
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		9)clear
+		echo "Cp:
+				cp <source_file> <target_file>
+				Copies the source file to the target.
+				
+				cp file1 file2 file3 ... dir
+				Copies the files to the target directory (last argument).
+				
+				cp -i
+				interactive, Asks for user confirmation if the target file already exists
+				
+				cp –r <source_dir> <target_dir> (recursive)
+				Copies the whole directory."
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		10)clear
+		echo "Mv:
+				mv <old_name> <new_name> (move)
+				Moves \ renames the given file or directory.
+				
+				mv –i (interactive)
+				If the new file already exits, asks for user confirm"
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		11)	 clear 
+		echo "Rm:	
+				rm file1 file2 file3 ... (remove)
+				Removes the given files.
+				
+				rm -i (interactive)
+				Always ask for user confirm.
+				
+				rm –r dir1 dir2 dir3 (recursive)
+				Removes the given directories with all their contents."
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		12)clear
+		echo "Mkdir:
+				mkdir dir1 dir2 dir3 ... (make dir)
+				Creates directories with the given names.
+				
+				rmdir dir1 dir2 dir3 ... (remove dir)
+				Removes the given directories
+				
+				Safety: only works when directories are empty.
+				Alternative: rm -r (doesn't care if they are empty directories or not)"
+		
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		13)clear
+		echo 		"head [<n>] <file>
+				Displays the first <n> lines (or 10 by default) of the given file.
+				Doesn't have to open the whole file to do this!
+					
+					tail [<n>] <file>
+				Displays the last <n> lines (or 10 by default) of the given file.
+				No need to load the whole file in RAM! Very useful for huge files.
+					
+					tail -f <file> (followtxt)
+				Displays the last 10 lines of the given file and continues to display new
+				lines when they are appended to the file.
+				
+				Very useful to follow the changes in a log file, for example.
+					Examples:
+				head windows_bugs.txt tail -f ben.txt"
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		
+		read
+		;;
+		14)clear
+		echo	"i: No matter a small or big Letter, look for everything
+				
+				 w: Exact search of the word, no additions
+				
+				 o: Print  only  the  matched  (non-empty) parts of a matching line,
+					with each such part on a separate output line
+					
+				 c: count
+					Suppress  normal output; instead print a count of matching lines
+					for each input file.	
+				
+				 L: -files-without-match
+					Suppress normal output; instead print the  name  of  each  input
+					file from which no output would normally have been printed.  The
+					scanning will stop on the first match."
+		
+		echo 	"*********************************************************************************"
+		echo		"grep <pattern> <files>
+				Scans the given files and displays the lines which match the given
+				pattern.
+				
+					grep error *.log
+				Displays all the lines containing error in the *.log files
+				
+					grep –i error *.log
+				Same, but case insensitive
+				
+					grep –ri error
+				Same, but recursively in all the files and subdirectories
+				
+					grep –v info *.log
+				Outputs all the lines in the files except those containing info " 
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		15)clear
+		echo		"sort <file>
+				Sorts the lines in the given file in character order and outputs them.
+				
+					sort –r <file>
+				Same, but in reverse order.
+				
+					sort –ru <file>
+				u: unique. Same, but just outputs identical lines once. "
+		echo ""
+		echo ""
+		echo ""
+		#continue
+		read
+		;;
+		16)clear
+		echo "	1. test - Intended for Basic Accounting  in ((+-*/=))
+				
+				2. xargs -build and execute command lines from standard input 
+						  xargs [options] [command [initial-arguments]]
+						  grep -L #include*.c | xargs rm 
+				
+				3. r: Recursive
+				   f: Regular
+				   x: Executball
+				   d: directory
+						 
+		"
+		;;
+		*)
+        echo "Invalid entry."
+        echo ""
+		echo ""
+		echo ""
+        continue
+        ;;
+       esac 
+done # סיום לולאה מספר 2
+	#continue
+	;;
+	3)clear
+	echo "BASH"
+	echo " " 
+	echo ""
+	#continue
+	read
+	;;
+	4)clear # שפת תכנות C
+	while true; do
+        cat << EOF1			#פקודות מערכת של שפת C
+        Please Select:
+        1.  text editors
+        2.  Wget
+        3.  sleep
+        4.  wc
+        5.  bc
+        6.  date
+        7.  ls
+        8.  "cat"
+        9.  cp
+        10. mv
+        11. rm
+        12. mkdir
+        13. head/tail
+        14. grep
+        15. sort
+        0. Quit
+EOF1
+read -p "Enter selection [0-7] > "
+	case "$REPLY" in
+		0)clear
+        break
+        ;;
+		1)clear
+		
+		echo "moti c "
+		echo " "
+		read
+		;;
+		*)
+        echo "Invalid entry."
+        echo ""
+		echo ""
+		echo ""
+        continue
+        ;;
+	 esac
+ 
+done #סיום לולאת שפת C 
+		# continue
+        ;;
+		5)clear
+		
+		echo "moti 5 "
+		echo " " 
+		read
+		;;
+		*)
+        echo "Invalid entry."
+        continue
+	;;
+ esac
+ 
+done #סיום לןלאה מרכזית
+        echo "Program terminated."
+
+
