@@ -1,0 +1,189 @@
+#!/bin/bash
+# while-menu: a menu driven system information program
+DELAY=5 # Number of seconds to display results
+clear ;
+echo "hello to meking scriptshell" ;
+read -p "what is your name	 " name;
+echo "hello $name " ;
+echo  ; 
+read -p "what is your namescript	 " namescript ;
+touch "$namescript"
+echo 
+while true; do
+    	cat << EOF
+        Please Select:
+        1. Display System Information
+        2. Display Disk Space
+        3. Display Home Space Utilization
+        4. folder 
+        5. mking file
+        6. tar.gz
+        7. manual printing
+        8. Permissions
+        9. loop for
+        0. Quit
+EOF
+    read -p "Enter selection [0-9] > "
+    case "$REPLY" in
+       
+        0)
+            break
+            ;;
+        1)clear
+            echo "Hostname: $HOSTNAME"
+            uptime
+            ;;
+        2)clear
+            df -h
+            ;;
+        3)clear
+            if [[ $(id -u) -eq 0 ]]; then
+                echo "Home Space Utilization (All Users)"
+                du -sh /home/*
+            else
+                echo "Home Space Utilization ($USER)"
+                du -sh $HOME
+            fi;;
+        
+        4)clear #folder
+			echo "
+				
+	Please Select:
+	1. Create a folder
+	2. renume a folder
+	0. quit
+				"
+			read -p "Enter selection [0-2] > "
+			if [[ $REPLY =~ ^[0-2]$ ]]; then
+				if [[ $REPLY == 0 ]]; then
+					echo "Program terminated."
+					continue
+				fi
+				if [[ $REPLY == 1 ]]; then
+					read -p "whet the name of folder?	" newfolder
+					echo "mkdir $newfolder" >>"$namescript"
+					continue
+				fi
+				if [[ $REPLY == 2 ]]; then
+					read -p "whet the name of folder?	" mvfolder
+					read -p "whet the name of the new folder?	" mvnewfolder
+					echo "mv $mvnfolder $mvnewfolder" >>"$namescript"
+					continue
+				fi
+					
+				
+			else
+					echo "Invalid entry." >&2
+					continue
+			fi
+			;;
+		5)clear #mking file
+		echo "
+	Please Select:
+	1. Create a file
+	2. renume a file
+	0. quit	
+			"
+			read -p "Enter selection [0-2] > "
+			if [[ $REPLY =~ ^[0-2]$ ]]; then
+				if [[ $REPLY == 0 ]]; then
+					echo "Program terminated."
+					continue
+				fi
+				if [[ $REPLY == 1 ]]; then
+					read -p "whet the name of file?	" tnewfile
+					echo "touch $tnewfile" >>"$namescript"
+					continue 
+				fi
+				if [[ $REPLY == 2 ]]; then
+					read -p "whet the name of file?	" mvnewfile
+					read -p "whet the name of the new file?	" mvnewfile2
+					echo "mv $mvnewfile $mvnewfile2" >>"$namescript"
+					continue
+				fi
+					
+				
+			else
+					echo "Invalid entry." >&2
+					continue
+			fi
+			;;
+		6)clear #tar.gz
+			read -p "what is you File Location?" location
+			read -p "what is your tar name??" namelocation
+			echo "tar -zcf $namelocation.tar.gz $location" >> "$namescript"
+			;;
+		8)clear
+				echo "
+	Please Select:
+	0. exit
+	1. user
+	2. grup
+	3. others
+	4. all	
+			"
+			
+			read -p "Enter selection [0-4] > "
+			if [[ $REPLY =~ ^[0-4]$ ]]; then
+				if [[ $REPLY == 0 ]]; then
+					echo "Program terminated."
+					continue
+				fi
+				if [[ $REPLY == 1 ]]; then
+					read -p "What permissions you want to give or deny (Us)?	" upramition
+					echo "chmod u=$upramition $namescript" >>"$namescript"
+					continue 
+				fi
+				if [[ $REPLY == 2 ]]; then
+					read -p "What permissions you want to give or deny?(Gr)	" upramition
+					echo "chmod g=$upramition $namescript" >>"$namescript"
+					continue 
+				fi
+				if [[ $REPLY == 3 ]]; then
+					read -p "What permissions you want to give or deny(Oth)?	" upramition
+					echo "chmod o=$upramition $namescript" >>"$namescript"
+					continue 
+				fi
+				if [[ $REPLY == 4 ]]; then
+					read -p "What permissions you want to give or deny(All)?	" upramition
+					echo "chmod a=$upramition $namescript" >>"$namescript"
+					continue 
+				fi
+					
+				
+			else
+					echo "Invalid entry." >&2
+					continue
+			fi
+			
+			chmod +x "$namescript"
+			;;
+		 9)clear # for fun
+		 	echo "Produces loops :for 1 in 2; do"
+			read -p "What  is 1 ?" one
+			read -p "What  is 2 ?" two
+			echo "Want to get in the loop?
+						1---Yes
+						2---No"
+			read -p "Enter selection [1-2] > "
+			if [[ $REPLY =~ ^[1]$ ]]; then
+				read -p "What do you want to sign in to the for loop?\n" forinsid
+				echo "for $one in $two/*; do" >> "$namescript"
+				echo "$forinsid" >> "$namescript"
+				echo "done" >> "$namescript"
+			else
+				echo "for $one in $two/*; do" >> "$namescript"
+				echo "done" >> "$namescript"
+					continue
+			fi
+			
+		 	;;
+		 *)clear
+            echo "Invalid entry."
+            ;;	
+    esac
+    sleep "$DELAY"
+done
+echo "Program terminated."
+
+
